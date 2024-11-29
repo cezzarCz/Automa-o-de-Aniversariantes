@@ -35,7 +35,7 @@ else:
     config = configparser.ConfigParser()
     config.read(configPath)
 
-# Definição do perfil do Chrome a ser utilizado #
+# Definição do perfil do Chrome a ser utilizado
 try:
     profilePath = config['chrome']['profile_path']
 except Exception as e:
@@ -44,7 +44,7 @@ except Exception as e:
     raise KeyError(
         "A configuração para 'profile_path' é obrigatória no arquivo config.ini.")
 
-# Definição da planilha de aniversariantes #
+# Definição da planilha de aniversariantes
 try:
     # Define o caminho da planilha na pasta "Aniversarios" na área de trabalho
     caminho_planilha_aniversariantes = os.path.join(
@@ -56,7 +56,7 @@ except Exception as e:
         f'Arquivo "aniversariantes.xlsx não encontrado, verifique e tente novamente.\n"')
     raise e
 
-# Definição da planilha contendo o telefone do diretor #
+# Definição da planilha contendo o telefone do diretor
 try:
     # Define o caminho da planilha na mesma pasta, mas em uma planilha diferente
     caminho_planilha_diretor = os.path.join(pastaAniversarios, "diretor.xlsx")
