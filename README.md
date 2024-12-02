@@ -25,49 +25,57 @@
 
 - Para o funcionamento adequado da automação, algumas planilhas e um arquivo de configuração, são essenciais.
 - Utilize termos, nomes de pasta ou arquivos, exatamente como o descrito aqui.  
-  _OBS: Cada campo listado abaixo deverá ser uma coluna na planilha, contendo na primeira linha o termo que identifica cada coluna._  
-  Exemplo:  
-  <img src="prints/Estrutura.png" alt="Print contendo exemplificação de estruturação da planilha." width="1000">
+  _OBS: Cada campo listado abaixo deverá ser uma coluna na planilha, contendo na primeira linha o termo que identifica cada coluna._
 
-1. **Pasta na Área de Trabalho (Desktop) > `Aniversarios`:**
+1.  **Pasta na Área de Trabalho (Desktop) > `Aniversarios`:**
 
-   - Pasta na Desktop que irá conter todos os arquivos necessários para a automação.
+    - Pasta na Desktop que irá conter todos os arquivos necessários para a automação.
 
-2. **Planilha > `aniversariantes.xlsx`:**
+2.  **Planilha > `aniversariantes.xlsx`:**
 
-   - Planilha contendo informações relevantes de cada funcionário.  
-     **Neste caso as informações relevantes a demanda são, em ordem:**
-     - `Ponto`: Identificador único.
-     - `Dia`: Dia de nascimento.
-     - `Mês`: Mês de nascimento.
-     - `Nome de guerra`: "Apelido" do PLF.
-     - `Nome completo`: Nome completo do PLF.
-     - `Lotação`: Local de trabalho do PLF.
-     - `Telefone`: Número do telefone do PLF (com DDD).
+    - Planilha contendo informações relevantes de cada funcionário.  
+       **Neste caso as informações relevantes a demanda são, em ordem:**
 
-3. **Planilha > `diretor.xlsx`:**
+      - `Ponto`: Identificador único.
+      - `Dia`: Dia de nascimento.
+      - `Mês`: Mês de nascimento.
+      - `Nome de guerra`: "Apelido" do PLF.
+      - `Nome completo`: Nome completo do PLF.
+      - `Lotação`: Local de trabalho do PLF.
+      - `Telefone`: Número do telefone do PLF (com DDD).
 
-   - Planilha contendo informações relevantes do diretor do departamento, que irá receber a mensagem contendo os aniversariantes.
-     **Estrutura da planilha:**
-     - `Diretor`: Telefone do diretor(somente números).
-     - `Nome`: Nome do diretor.
+        **Exemplo:**  
+        <img src="prints/Estrutura.png" alt="Print contendo exemplificação de estrutura." width="1000">
 
-4. **Arquivo > `config.ini`:**
+      s
 
-   - Arquivo de configuração contendo o caminho até o perfil do Chrome a ser utilizado.  
-     _Copie o conteúdo abaixo, colando dentro do arquivo de configuração, trocando PONTO_USUARIO, pelo número de ponto real do usuário._
-     **Conteúdo do arquivo:**
-     - [chrome]  
-       profile_path = C:\Users\PONTO_USUARIO\AppData\Local\Google\Chrome\User Data
+3.  **Planilha > `diretor.xlsx`:**
 
-5. **Navegador Google Chrome atualizado:**
+    - Planilha contendo informações relevantes do diretor do departamento, que irá receber a mensagem contendo os aniversariantes.
+      **Estrutura da planilha:**
+      - `Diretor`: Telefone do diretor(somente números).
+      - `Nome`: Nome do diretor.  
+        **Exemplo:**  
+        <img src="prints/Diretor.png" alt="Print contendo exemplificação de estrutura." width="350">
 
-   - Navegador que será utilizado pela automação
-   - **OBSERVAÇÕES IMPORTANTES:**  
-     _Antes de executar o programa, o WhatsApp Web deve estar devidamente logado na conta que enviará a mensagem._
-     1. Abra o Chrome, leia o QR Code do Whatsapp Web e espere carregar.
-     2. Salve qualquer trabalho importante que estiver fazendo no navegador.
-     3. TODAS as intâncias do navegador Chrome serão encerradas, antes da automação iniciar.
+4.  **Arquivo > `config.ini`:**
+
+    - Arquivo de configuração contendo o caminho até o perfil do Chrome a ser utilizado.  
+      _Copie o conteúdo abaixo, colando dentro do arquivo de configuração, trocando PONTO_USUARIO, pelo número de ponto real do usuário._
+      **Conteúdo do arquivo:**
+      - ```
+         [chrome]
+         profile_path = C:\Users\PONTO_USUARIO\AppData\Local\Google\Chrome\User Data
+        ```
+
+5.  **Navegador Google Chrome atualizado:**
+
+    - Navegador que será utilizado pela automação
+    - **OBSERVAÇÕES IMPORTANTES:**  
+      _Antes de executar o programa, o WhatsApp Web deve estar devidamente logado na conta que enviará a mensagem._
+      1. Abra o Chrome, leia o QR Code do Whatsapp Web e espere carregar.
+      2. Salve qualquer trabalho importante que estiver fazendo no navegador.
+      3. TODAS as intâncias do navegador Chrome serão encerradas, antes da automação iniciar.
 
 ---
 
@@ -120,7 +128,7 @@
    - As mensagens serão enviadas automaticamente ao número do diretor identificado.
 
 3. **Resultado:**
-   - Caso existam aniversariantes, as mensagens serão enviadas automaticamente.
+   - Caso existam aniversariantes, as mensagens serão enviadas automaticamente, para o contato do diretor definido anteriormente.
    - Se não houver aniversariantes no dia, o programa exibirá uma mensagem informativa no log.
    - Dois arquivos serão gerados na área de trabalho:
      1. `aniversariantes.txt`: Contendo as mensagens de aniversário geradas ou informando que não existem aniversariantes para a data em questão.
