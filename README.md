@@ -14,7 +14,7 @@
 - **Envio automático de mensagem:**
 
   - Através de uma sessão (Chrome) previamente configurada no WhatsApp Web, mitigando a necessidade de leitura do QR Code toda vez que o programa executar.
-    > O caminho do perfil Chrome a ser utilizado é definido dinâmicamente, através de um arquivo "config.ini".
+    > O caminho do perfil Chrome a ser utilizado é definido dinâmicamente, através de um arquivo [`config.ini`](#perfil-do-google-chrome).
 
 - **Compatibilidade:**
   - O programa opera diretamente com o navegador Chrome e depende de arquivos Excel para extração de dados.
@@ -60,8 +60,10 @@
 
 4.  **Arquivo > `config.ini`:**
 
+    # Perfil do Google Chrome
+
     - Arquivo de configuração contendo o caminho até o perfil do Chrome a ser utilizado.  
-      _Copie o conteúdo abaixo, colando dentro do arquivo de configuração, trocando PONTO_USUARIO, pelo número de ponto real do usuário._
+      _Copie o conteúdo abaixo, colando dentro do arquivo de configuração, trocando PONTO_USUARIO, pelo número de ponto real do usuário._  
       **Conteúdo do arquivo:**
       - ```
          [chrome]
@@ -135,3 +137,26 @@
      2. `log_erro_aniversariantes.log`: Arquivo de log contendo todos os registros de log (caso existam) informando o usuário de erros de execução ou alertas informativos.
 
 ---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Linguagem:** Python
+- **Biblioteca de interação com Navegador:** Selenium
+- **Manipulação de Dados:** Pandas
+- **Manipulação de Planilhas Excel:** Openpyxl
+- **Criação do Executável:** PyInstaller
+
+---
+
+## ⚠️ Limitações
+
+- A automação depende de um perfil do Chrome configurado e previamente logado no WhatsApp Web. Isso é necessário porque, utilizando o arquivo [`config.ini`](#perfil-do-google-chrome), o WhatsApp Web já estará logado, eliminando a necessidade de ler o QR Code a cada execução e garantindo que a automação funcione de forma autônoma.
+- O Agendador de Tarefas precisa estar corretamente configurado para garantir a execução nos horários desejados, o programa será executado conforme a configuração definida previamente pelo usuário.
+- É necessário configurar ou atualizar as planilhas de informações ou arquivo de configuração de perfil Chrome manualmente.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Erick Cezar**, email de contato: erickcezar07@gmail.com.  
+ _Feedbacks e sugestões são bem-vindos!_
